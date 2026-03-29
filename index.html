@@ -80,6 +80,26 @@ async function research() {
     let data = await res.json();
     document.getElementById("output").innerText = data.result || data.error;
 }
+    <script>
+async function analyzeText() {
+    const text = document.getElementById("inputText").value;
+    const resultEl = document.getElementById("result");
+
+    resultEl.innerText = "⏳ Analyzing...";
+
+    const response = await fetch("/analyze", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ text: text })
+    });
+
+    const data = await response.json();
+
+    resultEl.innerText = data.result;
+}
+</script>
 </script>
 
 </body>
