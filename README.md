@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Flask](https://img.shields.io/badge/Flask-WebApp-black)
+![Status](https://img.shields.io/badge/Status-Active-success)
 # 🚀 InsightFlow AI
 
 InsightFlow AI is a web application that analyzes customer feedback and provides structured insights. It also includes an app research feature to analyze popular apps and suggest improvements.
