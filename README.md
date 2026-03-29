@@ -5,6 +5,7 @@
 
 InsightFlow AI is a web application that analyzes customer feedback and provides structured insights. It also includes an app research feature to analyze popular apps and suggest improvements.
 
+⚠️ Note: This project is a prototype built as our first project. Some responses may be simulated due to API limitations.
 ---
 
 ## 📌 Problem Statement
