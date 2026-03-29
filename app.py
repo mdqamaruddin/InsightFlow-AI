@@ -10,7 +10,11 @@ except:
 
 app = Flask(__name__)
 CORS(app)
+from flask import send_file
 
+@app.route("/")
+def home():
+    return send_file("index.html")
 # 👉 If you want AI, add your key here (optional)
 if AI_AVAILABLE:
     try:
