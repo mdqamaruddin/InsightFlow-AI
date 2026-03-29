@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>InsightFlow AI</title>
+<style>
+body {
+    background: #000;
+    color: #FFD700;
+    font-family: Arial;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+textarea, input {
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    background: #FFD700;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#output {
+    margin-top: 20px;
+    white-space: pre-line;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>🚀 InsightFlow AI</h1>
+
+<h3>Feedback Analysis</h3>
+<textarea id="feedback"></textarea><br>
+<button onclick="analyze()">Analyze</button>
+
+<h3>App Research</h3>
+<input id="app" placeholder="Enter app name"><br>
+<button onclick="research()">Search</button>
+
+<div id="output"></div>
+</div>
+
+<script>
+async function analyze() {
+    let feedback = document.getElementById("feedback").value;
+
+    let res = await fetch("http://127.0.0.1:5000/analyze", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({feedback: feedback})
+    });
+
+    let data = await res.json();
+    document.getElementById("output").innerText = data.result || data.error;
+}
+
+async function research() {
+    let app = document.getElementById("app").value;
+
+    let res = await fetch("http://127.0.0.1:5000/research", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({app: app})
+    });
+
+    let data = await res.json();
+    document.getElementById("output").innerText = data.result || data.error;
+}
+</script>
+
+</body>
+</html>
