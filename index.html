@@ -58,7 +58,7 @@ button {
 async function analyze() {
     let feedback = document.getElementById("feedback").value;
 
-    let res = await fetch("http://127.0.0.1:5000/analyze", {
+    let res = await fetch("https://insightflow-ai-5qsp.onrender.com/analyze", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({feedback: feedback})
@@ -71,7 +71,7 @@ async function analyze() {
 async function research() {
     let app = document.getElementById("app").value;
 
-    let res = await fetch("http://127.0.0.1:5000/research", {
+    let res = await fetch("https://insightflow-ai-5qsp.onrender.com/research", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({app: app})
