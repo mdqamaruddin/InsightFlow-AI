@@ -18,7 +18,7 @@ def home():
 # 👉 If you want AI, add your key here (optional)
 if AI_AVAILABLE:
     try:
-        genai.configure(api_key="AIzaSyA7gV09MTF2t36UUdopUFs7w8x0fsi9iYA")
+        genai.configure
         model = genai.GenerativeModel("gemini-pro")
     except:
         AI_AVAILABLE = False
